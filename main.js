@@ -15,7 +15,7 @@ var enemyImg = {
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/jason.gif";
 function person1(){
-  ctx.drawImage(enemyImg,0,0);
+  ctx.drawImage(enemyImg,enemyImg.x,enemyImg.y);
 }
   setInterval(person1,16);
 
