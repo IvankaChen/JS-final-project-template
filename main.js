@@ -8,6 +8,10 @@ function draw(){
 }
   setInterval(draw,16);
 
+var enemyImg = {
+  x:10
+  y:10
+};
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/jason.gif";
 function person1(){
@@ -28,3 +32,4 @@ function person3(){
   ctx.drawImage(enemy3Img,0,0);
 }
   setInterval(person3,16);
+
