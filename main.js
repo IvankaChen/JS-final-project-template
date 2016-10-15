@@ -22,7 +22,7 @@ function person1(){
 var enemy2Img = document.createElement("img");
 enemy2Img.src = "images/rukia.gif";
 function person2(){
-  ctx.drawImage(enemy2Img,100,100);
+  ctx.drawImage(enemy2Img,95,100);
 }
   setInterval(person2,16);
 
