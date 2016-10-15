@@ -21,3 +21,10 @@ function person2(){
   ctx.drawImage(enemy2Img,0,0);
 }
   setInterval(person2,16);
+
+var enemy3Img = document.createElement("img");
+enemy3Img.src = "images/daigh.gif";
+function person3(){
+  ctx.drawImage(enemy3Img,0,0);
+}
+  setInterval(person3,16);
