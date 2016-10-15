@@ -9,9 +9,10 @@ function draw(){
   setInterval(draw,16);
 
 var enemyImg1 = {
-  x:10,
-  y:10
+  x:96,
+  y:480-32
 };
+
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/jason.gif";
 function person1(){
