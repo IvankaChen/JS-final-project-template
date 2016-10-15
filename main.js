@@ -12,7 +12,6 @@ var enemyImg1 = {
   x:96,
   y:480-32
 };
-
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/jason.gif";
 function person1(){
@@ -23,7 +22,7 @@ function person1(){
 var enemy2Img = document.createElement("img");
 enemy2Img.src = "images/rukia.gif";
 function person2(){
-  ctx.drawImage(enemy2Img,0,0);
+  ctx.drawImage(enemy2Img,100,100);
 }
   setInterval(person2,16);
 
