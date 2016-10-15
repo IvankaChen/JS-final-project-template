@@ -18,3 +18,13 @@ function person1(){
 }
 
   setInterval(person1,16);
+
+
+var enemy2Img = document.createElement("img");
+enemy2Img.src = "images/rukia.gif";
+
+function person2(){
+  ctx.drawImage(enemy2Img,0,0);
+}
+
+  setInterval(person2,16);
