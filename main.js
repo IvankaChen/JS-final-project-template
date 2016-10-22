@@ -33,3 +33,9 @@ function person3(){
 }
   setInterval(person3,16);
 
+var button = document.createElement("img");
+button.src = "images/tower-btn.png";
+function buttonf(){
+  ctx.drawImage(button,10,10);
+}
+  setInterval(buttonf,16);
