@@ -43,8 +43,8 @@ function buttonf(){
 
 $("#game-canvas").on("mousemove", function event(){
 cursor={
-x=event.offsetX
-y=event.offsetY
+x:event.offsetX,
+y:event.offsetY
                      });                     
                                      
 
