@@ -37,13 +37,15 @@ var button = document.createElement("img");
 button.src = "images/tower-btn.png";
 function buttonf(){
   ctx.drawImage(button,580,420,60,60);
-  var cursor = {x:0,y:0};
+   ctx.drawImage(towerbuilding,cursor.x,cursor.y);
 }
   setInterval(buttonf,16);
 
-$("#game-canvas").mousemove(function(event){
-  console.log("x:" +event.offsetX+",y:"+event.offsetY);
-});
+$("#game-canvas").on("mousemove", funcition(event){
+cursor={
+x=event.offsetX
+y=event.offsetY
+                     });                     
                                      
 
 
