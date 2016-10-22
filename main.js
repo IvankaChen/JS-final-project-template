@@ -32,7 +32,7 @@ setInterval(draw1,16);
 
 var cursor = {};
 $("#game-canvas").on("mousemove", function (event){
- var cursor={
+ cursor={
 x:event.offsetX,
 y:event.offsetY
 }});
