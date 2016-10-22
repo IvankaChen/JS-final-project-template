@@ -37,6 +37,7 @@ var button = document.createElement("img");
 button.src = "images/tower-btn.png";
 function buttonf(){
   ctx.drawImage(button,580,420,60,60);
+  var cursor = {x:0,y:0};
 }
   setInterval(buttonf,16);
 
