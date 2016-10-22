@@ -17,6 +17,8 @@ var enemy3Img = document.createElement("img");
 enemy3Img.src = "images/daigh.gif";
 var button = document.createElement("img");
 button.src = "images/tower-btn.png";
+var towerImg = document.createElement("img");
+tower.src = "images/tower.png";
 
 function draw1(){
 ctx.drawImage(bgImg,0,0);
@@ -24,7 +26,7 @@ ctx.drawImage(enemyImg,enemyImg1.x,enemyImg1.y);
 ctx.drawImage(enemy2Img,95,100);
 ctx.drawImage(enemy3Img,0,0);
 ctx.drawImage(button,580,420,60,60);
-ctx.drawImage(button,cursor.x,cursor.y);
+ctx.drawImage(tower,cursor.x,cursor.y);
 }
 setInterval(draw1,16);
 
