@@ -40,7 +40,7 @@ function buttonf(){
    ctx.drawImage(button,cursor.x,cursor.y);
 }
   setInterval(buttonf,16);
-
+var cursor = {};
 $("#game-canvas").on("mousemove", function (event){
  var cursor={
 x:event.offsetX,
