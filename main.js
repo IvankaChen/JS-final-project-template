@@ -17,7 +17,7 @@ var enemy3Img = document.createElement("img");
 enemy3Img.src = "images/daigh.gif";
 var button = document.createElement("img");
 button.src = "images/tower-btn.png";
-var towerImg = document.createElement("img");
+var tower = document.createElement("img");
 tower.src = "images/tower.png";
 
 function draw1(){
