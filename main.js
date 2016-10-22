@@ -41,11 +41,11 @@ function buttonf(){
 }
   setInterval(buttonf,16);
 
-$("#game-canvas").on("mousemove", function event(){
+$("#game-canvas").on("mousemove", function (event){
 cursor={
 x:event.offsetX,
 y:event.offsetY
-};                     
+});                     
                                      
 
 
