@@ -39,4 +39,4 @@ function buttonf(){
   ctx.drawImage(button,500,250);
 }
   setInterval(buttonf,16);
-
+ctx.drawImage(button,500,250,30,30);
