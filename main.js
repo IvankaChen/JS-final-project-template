@@ -45,7 +45,7 @@ $("#game-canvas").on("mousemove", function event(){
 cursor={
 x:event.offsetX,
 y:event.offsetY
-                     });                     
+});                     
                                      
 
 
