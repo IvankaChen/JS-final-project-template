@@ -40,3 +40,13 @@ function buttonf(){
 }
   setInterval(buttonf,16);
 
+$("#game-canvas").mousemove(function(event){
+  console.log("x:" +event.offsetX+",y:"+event.offsetY);
+});
+                                     
+
+
+
+
+
+
