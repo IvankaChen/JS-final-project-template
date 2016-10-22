@@ -33,6 +33,13 @@ function person3(){
 }
   setInterval(person3,16);
 
+var cursor = {};
+$("#game-canvas").on("mousemove", function (event){
+ var cursor={
+x:event.offsetX,
+y:event.offsetY
+}});
+
 var button = document.createElement("img");
 button.src = "images/tower-btn.png";
 function buttonf(){
@@ -40,12 +47,7 @@ function buttonf(){
    ctx.drawImage(button,cursor.x,cursor.y);
 }
   setInterval(buttonf,16);
-var cursor = {};
-$("#game-canvas").on("mousemove", function (event){
- var cursor={
-x:event.offsetX,
-y:event.offsetY
-}});                     
+                     
                                      
 
 
