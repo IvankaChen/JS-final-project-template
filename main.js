@@ -1,18 +1,14 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 
-var bgImg = document.createElement("img");
-bgImg.src = "images/map.png";
-function draw(){
-  ctx.drawImage(bgImg,0,0);
-}
-  setInterval(draw,16);
 
 var enemyImg1 = {
   x:96,
   y:480-32
 };
 
+var bgImg = document.createElement("img");
+bgImg.src = "images/map.png";
 var enemyImg = document.createElement("img");
 enemyImg.src = "images/jason.gif";
 var enemy2Img = document.createElement("img");
@@ -21,6 +17,7 @@ var enemy3Img = document.createElement("img");
 enemy3Img.src = "images/daigh.gif";
 
 function draw1(){
+ctx.drawImage(bgImg,0,0);
 ctx.drawImage(enemyImg,enemyImg1.x,enemyImg1.y);
 ctx.drawImage(enemy2Img,95,100);
 ctx.drawImage(enemy3Img,0,0);
