@@ -40,3 +40,37 @@ x:event.offsetX,
 y:event.offsetY
 }});
 
+//製造城堡
+var isBuilding = false;
+var tower={};
+var cursor = {};
+$( "#game-canvas" ).on( "click", function(){
+  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
+    if(isBuilding){
+    isBuilding= false;
+  }
+    else{
+    isBuilding = true;
+  }
+  }
+  else if(isBuilding){
+  tower.x =cursor.x-cursor.x%32;
+  tower.y =cursor.y-cursor.y%32;
+ isBuilding=false;
+  }
+ 
+});
+
+//判斷之間
+
+function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
+    if(     pointX >= targetX
+        &&  pointX <= targetX + targetWidth
+        &&  pointY >= targetY
+        &&  pointY <= targetY + targetHeight
+    ){
+        return true;
+    } else {
+        return false;
+    }
+}
