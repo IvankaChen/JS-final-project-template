@@ -5,10 +5,10 @@ var FPS = 50;
 var enemyImg1 = {
   x:96,
   y:480-32,
-  speedx:64 ,
+  speedx:0,
   speedy:64 ,
   move:function(){
-    {x:0,y:-1} 
+    {x:0,y:-1};
 }
 };
 
