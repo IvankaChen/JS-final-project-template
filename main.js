@@ -6,10 +6,10 @@ var enemyImg1 = {
   x:96,
   y:480-32,
   speedx:0,
-  speedy:64 ,
+  speedy:-64 ,
   move:function(){
-  this.x=this.x+{x:0};
-  this.y=this.y+{y:-1};   
+  this.x=this.x+this.speedx/FPS;
+  this.y=this.y+this.speedy/FPS;
 }
 };
 
