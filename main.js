@@ -29,6 +29,7 @@ ctx.drawImage(enemy2Img,95,100);
 ctx.drawImage(enemy3Img,0,0);
 ctx.drawImage(towerImg,580,420,60,60);  
 ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
+ctx.drawImage(isBuilding,cursor.x,cursor.y);  
 }
 setInterval(draw1,16);
 
