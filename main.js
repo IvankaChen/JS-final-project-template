@@ -43,9 +43,15 @@ y:event.offsetY
 //製造城堡
 var isBuilding = false;
 var tower={};
+  if (isBuilding && ()){
+  tower.x =cursor.x;
+  tower.y =cursor.y;
+  }
+ ctx.drawImage();
+
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
-  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
+  if(isCollided(cursor.x, cursor.y, 580, 420, 60, 60)){
     if(isBuilding){
     isBuilding= false;
   }
@@ -61,8 +67,8 @@ $( "#game-canvas" ).on( "click", function(){
  
 });
 
-//判斷之間
 
+//判斷之間
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
         &&  pointX <= targetX + targetWidth
