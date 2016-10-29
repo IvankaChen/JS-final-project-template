@@ -8,7 +8,7 @@ var enemyImg1 = {
   speedx:0,
   speedy:64 ,
   move:function(){
-    {x:0,y:-1};
+  direction:{x:0,y:-1};
 }
 };
 
