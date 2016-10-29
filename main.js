@@ -27,11 +27,8 @@ ctx.drawImage(bgImg,0,0);
 ctx.drawImage(enemyImg,enemyImg1.x,enemyImg1.y);
 ctx.drawImage(enemy2Img,95,100);
 ctx.drawImage(enemy3Img,0,0);
-ctx.drawImage(button,580,420,60,60);
-   if(isBuilding){
-  ctx.drawImage(tower,cursor.x,cursor.y);
-  }
-ctx.drawImage(towerbuilding,cursor.x,cursor.y);
+ctx.drawImage(button,580,420,60,60);  
+ctx.drawImage(tower,cursor.x,cursor.y);
 }
 setInterval(draw1,16);
 
@@ -42,38 +39,4 @@ $("#game-canvas").on("mousemove", function (event){
 x:event.offsetX,
 y:event.offsetY
 }});
-
-//製造城堡
-var isBuilding = false;
-var tower={};
-var cursor = {};
-$( "#game-canvas" ).on( "click", function(){
-  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
-    if(isBuilding){
-    isBuilding= false;
-  }
-    else{
-    isBuilding = true;
-  }
-  }
-  else if(isBuilding){
-  tower.x =cursor.x-cursor.x%32;
-  tower.y =cursor.y-cursor.y%32;
- isBuilding=false;
-  }
- 
-});
-//判斷之間
-
-function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
-    if(     pointX >= targetX
-        &&  pointX <= targetX + targetWidth
-        &&  pointY >= targetY
-        &&  pointY <= targetY + targetHeight
-    ){
-        return true;
-    } else {
-        return false;
-    }
-}
 
