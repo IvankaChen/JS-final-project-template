@@ -18,7 +18,6 @@ var enemy3Img = document.createElement("img");
 enemy3Img.src = "images/daigh.gif";
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
-
 var towerbuiltImg = document.createElement("img");
 towerbuiltImg.src = "images/tower.png";
 
@@ -33,7 +32,7 @@ ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
 if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   } 
-ctx.drawImage(isBuilding,tower.x,tower.y);  
+ctx.drawImage(towerBuilding,tower.x,tower.y);  
 }
 setInterval(draw1,16);
 
