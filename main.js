@@ -7,6 +7,7 @@ var enemyImg1 = {
   y:480-32
 };
 
+//找圖片
 var bgImg = document.createElement("img");
 bgImg.src = "images/map.png";
 var enemyImg = document.createElement("img");
@@ -20,6 +21,7 @@ button.src = "images/tower-btn.png";
 var tower = document.createElement("img");
 tower.src = "images/tower.png";
 
+//畫畫
 function draw1(){
 ctx.drawImage(bgImg,0,0);
 ctx.drawImage(enemyImg,enemyImg1.x,enemyImg1.y);
@@ -30,9 +32,31 @@ ctx.drawImage(tower,cursor.x,cursor.y);
 }
 setInterval(draw1,16);
 
+//找游標
 var cursor = {};
 $("#game-canvas").on("mousemove", function (event){
  cursor={
 x:event.offsetX,
 y:event.offsetY
 }});
+
+//製造城堡
+var isBuilding = false;
+var tower={};
+var cursor = {};
+$( "#game-canvas" ).on( "click", function(){
+  if(isCollided(cursor.x, cursor.y, 590, 432, 50, 50)){
+    if(isBuilding){
+    isBuilding= false;
+  }
+    else{
+    isBuilding = true;
+  }
+  }
+  else if(isBuilding){
+  tower.x =cursor.x-cursor.x%32;
+  tower.y =cursor.y-cursor.y%32;
+ isBuilding=false;
+  }
+ 
+});
