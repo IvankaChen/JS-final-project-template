@@ -32,7 +32,7 @@ ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
 if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   } 
-ctx.drawImage(towerBuilding,tower.x,tower.y);  
+ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
 }
 setInterval(draw1,16);
 
