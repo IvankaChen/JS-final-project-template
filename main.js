@@ -43,11 +43,11 @@ y:event.offsetY
 //製造城堡
 var isBuilding = false;
 var tower={};
-  if (isBuilding && ()){
+  if (isBuilding &&(cursor)){
   tower.x =cursor.x;
   tower.y =cursor.y;
   }
- ctx.drawImage();
+ ctx.drawImage(cursor);
 
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
