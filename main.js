@@ -1,10 +1,15 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-
+var FPS = 50;
 
 var enemyImg1 = {
   x:96,
-  y:480-32
+  y:480-32,
+  speedx:64 ,
+  speedy:64 ,
+  move:function(){
+    {x:0 , y:-1 },   
+}
 };
 
 //找圖片
@@ -23,6 +28,7 @@ towerbuiltImg.src = "images/tower.png";
 
 //畫畫
 function draw1(){
+enemyImg1.move();
 ctx.drawImage(bgImg,0,0);
 ctx.drawImage(enemyImg,enemyImg1.x,enemyImg1.y);
 ctx.drawImage(enemy2Img,95,100);
@@ -33,7 +39,6 @@ if(isBuilding){
   } 
 ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
 }
-setInterval(draw1,16);
 
 //找游標
 var cursor = {};
@@ -63,7 +68,6 @@ $( "#game-canvas" ).on( "click", function(){
   }
 });
 
-
 //判斷之間
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
@@ -76,3 +80,4 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
         return false;
     }
 }
+setInterval(draw1,1000/FPS);
