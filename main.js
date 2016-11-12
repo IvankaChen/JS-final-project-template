@@ -29,8 +29,9 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
 var towerbuiltImg = document.createElement("img");
 towerbuiltImg.src = "images/tower.png";
-var slime = document.createElement("img");
-slimeImg.src = "images/slime.gif";
+
+var silmeImg = document.createElement("img");
+silmeImg.src = "images/silme.gif";
 
 //畫畫
 function draw1(){
@@ -46,7 +47,7 @@ if(isBuilding){
 ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
   for(var i=0 ; i < enemies.length ; i++){
     enemies[i].move();
-    ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
+    ctx.drawImage(silmeImg,enemies[i].x,enemies[i].y);
   }
   clock++;
 }
