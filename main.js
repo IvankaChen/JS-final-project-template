@@ -2,16 +2,17 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 50;
 
-var enemyImg1 = {
-  x:96,
-  y:480-32,
-  speedx:0,
-  speedy:-64 ,
+function Enemy(){
+  this.x=96;
+  this.y=480-32;
+  this.speedX=0;
+  this.speedY=-64;
   move:function(){
   this.x=this.x+this.speedx/FPS;
   this.y=this.y+this.speedy/FPS;
 }
 };
+var enemy = new Enemy();
 
 //找圖片
 var bgImg = document.createElement("img");
@@ -40,6 +41,7 @@ if(isBuilding){
   } 
 ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
 }
+
 
 //找游標
 var cursor = {};
@@ -81,4 +83,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
         return false;
     }
 }
+
+
+
 setInterval(draw1,1000/FPS);
