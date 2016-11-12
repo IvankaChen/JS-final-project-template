@@ -2,7 +2,7 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 50;
 var clock =0;
-
+var enemies = [];
 
 function Enemy(){
   this.x=96;
