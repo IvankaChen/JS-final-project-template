@@ -1,7 +1,7 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 50;
-var clock =0;
+var clock = 0;
 var enemies = [];
 
 function Enemy(){
@@ -10,8 +10,8 @@ function Enemy(){
   this.speedX = 0;
   this.speedY = -64;
   this.move = function(){
-  this.x = this.x+this.speedx/FPS;
-  this.y = this.y+this.speedy/FPS;
+  this.x = this.x + this.speedx/FPS;
+  this.y = this.y + this.speedy/FPS;
 }
 };
 var enemy = new Enemy();
@@ -48,7 +48,7 @@ ctx.drawImage(towerbuiltImg,tower.x,tower.y);
 //找游標
 var cursor = {};
 $("#game-canvas").on("mousemove", function (event){
- cursor={
+ cursor = {
 x:event.offsetX,
 y:event.offsetY
 }});
@@ -67,9 +67,9 @@ $( "#game-canvas" ).on( "click", function(){
   }
   }
   else if(isBuilding){
-  tower.x =cursor.x - cursor.x%32;
-  tower.y =cursor.y - cursor.y%32;
-  isBuilding=false;
+  tower.x = cursor.x - cursor.x%32;
+  tower.y = cursor.y - cursor.y%32;
+  isBuilding = false;
   }
 });
 
@@ -87,7 +87,7 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
 }
 
 if((clock % 80==0)){
-  var newEnemy=new Enemy();
+  var newEnemy = new Enemy();
   enemies.push(newEnemy);
 }
 
