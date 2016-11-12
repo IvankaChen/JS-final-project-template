@@ -32,7 +32,7 @@ towerbuiltImg.src = "images/tower.png";
 function draw1(){
 enemy.move();
 ctx.drawImage(bgImg,0,0);
-ctx.drawImage(enemyImg,enemyImg1.x,enemyImg1.y);
+ctx.drawImage(enemy,enemy.x,enemy.y);
 ctx.drawImage(enemy2Img,95,100);
 ctx.drawImage(enemy3Img,0,0);
 ctx.drawImage(towerImg,580,420,60,60);  
