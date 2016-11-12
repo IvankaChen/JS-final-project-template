@@ -5,13 +5,13 @@ var clock =0;
 var enemies = [];
 
 function Enemy(){
-  this.x=96;
-  this.y=480-32;
-  this.speedX=0;
-  this.speedY=-64;
-  this.move=function(){
-  this.x=this.x+this.speedx/FPS;
-  this.y=this.y+this.speedy/FPS;
+  this.x = 96;
+  this.y = 480-32;
+  this.speedX = 0;
+  this.speedY = -64;
+  this.move = function(){
+  this.x = this.x+this.speedx/FPS;
+  this.y = this.y+this.speedy/FPS;
 }
 };
 var enemy = new Enemy();
