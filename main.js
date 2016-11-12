@@ -29,7 +29,6 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
 var towerbuiltImg = document.createElement("img");
 towerbuiltImg.src = "images/tower.png";
-
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
 
@@ -41,7 +40,11 @@ ctx.drawImage(enemyImg,enemy.x,enemy.y);
 ctx.drawImage(enemy2Img,95,100);
 ctx.drawImage(enemy3Img,0,0);
 ctx.drawImage(towerImg,580,420,60,60);  
-if(isBuilding){
+  if((clock % 80==0)){
+  var newEnemy = new Enemy();
+  enemies.push(newEnemy);
+}
+  if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   } 
 ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
@@ -92,12 +95,5 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
         return false;
     }
 }
-
-if((clock % 80==0)){
-  var newEnemy = new Enemy();
-  enemies.push(newEnemy);
-}
-
-
 
 setInterval(draw1,1000/FPS);
