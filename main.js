@@ -29,10 +29,12 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
 var towerbuiltImg = document.createElement("img");
 towerbuiltImg.src = "images/tower.png";
+var slime = document.createElement("img");
+slimeImg.src = "images/slime.gif";
 
 //畫畫
 function draw1(){
-enemy.move();
+enemy.move();  
 ctx.drawImage(bgImg,0,0);
 ctx.drawImage(enemyImg,enemy.x,enemy.y);
 ctx.drawImage(enemy2Img,95,100);
@@ -42,9 +44,12 @@ if(isBuilding){
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   } 
 ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
+  for(var i=0 ; i < enemies.length ; i++){
+    enemies[i].move();
+    ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
+  }
   clock++;
 }
-
 
 //找游標
 var cursor = {};
