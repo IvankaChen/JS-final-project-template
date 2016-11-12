@@ -1,6 +1,8 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 50;
+var clock =0;
+var enemies = [];
 
 function Enemy(){
   this.x=96;
@@ -12,7 +14,6 @@ function Enemy(){
   this.y=this.y+this.speedy/FPS;
 }
 };
-var enemy = new Enemy();
 
 //找圖片
 var bgImg = document.createElement("img");
@@ -82,6 +83,11 @@ function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight)
     } else {
         return false;
     }
+}
+
+if((clock % 80==0)){
+  var newEnemy=new Enemy();
+  enemies.push(newEnemy);
 }
 
 
