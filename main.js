@@ -10,8 +10,8 @@ function Enemy(){
   this.speedX = 0;
   this.speedY = -64;
   this.move = function(){
-  this.x = this.x + this.speedx/FPS;
-  this.y = this.y + this.speedy/FPS;
+  this.x = this.x + this.speedX/FPS;
+  this.y = this.y + this.speedY/FPS;
 }
 };
 var enemy = new Enemy();
