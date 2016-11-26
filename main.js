@@ -3,6 +3,8 @@ var ctx = canvas.getContext("2d");
 var FPS = 50;
 var clock = 0;
 var treehp=100;
+var money = 0;
+var score = 0;
 var enemies = [];
 ctx.front = "24px Arial";
 ctx.fillStyle = "white";
@@ -81,7 +83,11 @@ var enemyPath = [
 //畫畫
 function draw1(){
 enemy.move();  
-ctx.fillText("Hello World",100,100);
+
+// 設定與印出文字
+ctx.fillText( "HP:"+treehp , 20, 20 );
+ctx.fillText( "Money:"+money , 20, 40 );
+ctx.fillText( "Score:"+score , 20, 60 );
 ctx.drawImage(bgImg,0,0);
 ctx.drawImage(enemyImg,enemy.x,enemy.y);
 ctx.drawImage(enemy2Img,95,100);
@@ -114,10 +120,6 @@ if (tower.aimingEnemyId!=null){
   ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);
 }
 
-// 設定與印出文字
-ctx.fillText( "HP:"+treehp , 20, 20 );
-ctx.fillText( "Money:"+money , 20, 40 );
-ctx.fillText( "Score:"+score , 20, 60 );
 
 //找游標
 var cursor = {};
