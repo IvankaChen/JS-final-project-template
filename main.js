@@ -26,10 +26,8 @@ function Enemy(){
           }
             else{
             this.x = enemyPath[this.pathDes].x;
-            this.y = enemyPath[this.pathDes].y;
-            
-            this.pathDes++;
-            
+            this.y = enemyPath[this.pathDes].y;            
+            this.pathDes++;           
             if (enemyPath[this.pathDes].x > this.x) {
               this.speedX = 64;
               this.speedY = 0;
@@ -42,9 +40,8 @@ function Enemy(){
             } else if (enemyPath[this.pathDes].y < this.y) {
               this.speedX = 0;
               this.speedY = -64;
-            }
-          
-        } else {
+            }          
+        }} else {
             this.x = this.x + this.speedX/FPS;
             this.y = this.y + this.speedY/FPS;
         }
