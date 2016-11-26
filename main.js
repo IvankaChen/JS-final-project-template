@@ -46,7 +46,7 @@ function Enemy(){
             this.y = this.y + this.speedY/FPS;
         }
     };
-}}
+}
 var enemy = new Enemy();
 
 //找圖片
