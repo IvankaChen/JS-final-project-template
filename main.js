@@ -113,7 +113,7 @@ ctx.drawImage(towerbuiltImg,tower.x,tower.y);
   }
   clock++;
 }
-towers.searchEnemy();
+towers[i].searchEnemy();
 if (tower.aimingEnemyId!=null){
   var Id =  tower.aimingEnemyId;
   ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);
