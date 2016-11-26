@@ -121,7 +121,9 @@ y:event.offsetY
 //製造城堡
 var isBuilding = false;
 var tower = {
-  shoot:function(){},
+  shoot:function(id){
+  enemies[id].hp = enemies[id].hp - this.damage;
+  },
   fireRate:1,
   readyToShootTime:1,
   damage:5,
