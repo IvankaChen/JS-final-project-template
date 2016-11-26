@@ -6,6 +6,7 @@ var treehp=100;
 var money = 0;
 var score = 0;
 var enemies = [];
+var towers = [];
 ctx.front = "24px Arial";
 ctx.fillStyle = "white";
 
@@ -101,14 +102,12 @@ ctx.drawImage(towerImg,580,420,60,60);
   ctx.drawImage(towerbuiltImg,cursor.x,cursor.y);
   } 
 ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
-  for(var i=0 ; i < enemies.length ; i++){
-   
+  for(var i=0 ; i < enemies.length ; i++){   
     if (enemies[i].hp<=0) {
        enemies.splice(i,1);
        money+=8;
        score+=10;      
-      }      
-    
+      }          
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
