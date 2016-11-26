@@ -140,9 +140,10 @@ var tower = {
         }
         return;
       }
+      this.aimingEnemyId=null;
     }
-    this.aimingEnemyId=null;
-    this.shoot=function(id){
+  },
+    shoot:function(id){
          ctx.beginPath(); 
          ctx.moveTo(this.x, this.y); 
          ctx.lineTo(enemies[id].x, enemies[id].y);
@@ -150,8 +151,8 @@ var tower = {
          ctx.lineWidth = 3;
          ctx.stroke();
          enemies[id].hp = enemies[id].hp - this.damage;
-           };
-}
+           }
+};
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
   if(isCollided(cursor.x, cursor.y, 580, 420, 60, 60)){
