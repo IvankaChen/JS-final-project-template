@@ -22,16 +22,16 @@ function Enemy(){
             
             this.pathDes++;
             
-            if (enemyPath[this.pathDes].x>this.x) {
+            if (enemyPath[this.pathDes].x > this.x) {
               this.speedX = 64;
               this.speedY = 0;
-            } else if (enemyPath[this.pathDes].x<this.x) {
+            } else if (enemyPath[this.pathDes].x < this.x) {
               this.speedX = -64;
               this.speedY = 0;
-            } else if (enemyPath[this.pathDes].y>this.y) {
+            } else if (enemyPath[this.pathDes].y > this.y) {
               this.speedX = 0;
               this.speedY = 64;
-            } else if (enemyPath[this.pathDes].y<this.y) {
+            } else if (enemyPath[this.pathDes].y < this.y) {
               this.speedX = 0;
               this.speedY = -64;
             }
