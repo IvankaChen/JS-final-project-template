@@ -96,9 +96,13 @@ ctx.drawImage(towerImg,580,420,60,60);
   } 
 ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
   for(var i=0 ; i < enemies.length ; i++){
+   
     if (enemies[i].hp<=0) {
-           enemies.splice(i,1);
+       enemies.splice(i,1);
+       money+=8;
+       score+=10;      
       }      
+    
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
@@ -109,6 +113,11 @@ if (tower.aimingEnemyId!=null){
   var Id =  tower.aimingEnemyId;
   ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);
 }
+
+// 設定與印出文字
+ctx.fillText( "HP:"+treehp , 20, 20 );
+ctx.fillText( "Money:"+money , 20, 40 );
+ctx.fillText( "Score:"+score , 20, 60 );
 
 //找游標
 var cursor = {};
