@@ -41,7 +41,7 @@ function Enemy(){
               this.speedX = 0;
               this.speedY = -64;
             }          
-        } else {
+         else {
             this.x = this.x + this.speedX/FPS;
             this.y = this.y + this.speedY/FPS;
         }
