@@ -155,7 +155,7 @@ var tower = {
          enemies[id].hp = enemies[id].hp - this.damage;
            };
 }
-var cursor = {},
+var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
   if(isCollided(cursor.x, cursor.y, 580, 420, 60, 60)){
     if(isBuilding){
