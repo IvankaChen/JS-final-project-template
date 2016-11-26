@@ -2,7 +2,10 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 var FPS = 50;
 var clock = 0;
+var treehp=100;
 var enemies = [];
+ctx.front = "24px Arial";
+ctx.fillStyle = "white";
 
 function Enemy(){
   this.x = 96;
@@ -11,12 +14,17 @@ function Enemy(){
   this.speedY = -64;
   this.pathDes = 0;
   this.speed = 64;
+  this.hp=10;
   this.move = function(){
         if( isCollided(enemyPath[this.pathDes].x, 
                        enemyPath[this.pathDes].y, 
                        this.x, this.y, 
                        this.speed/FPS, this.speed/FPS) ){
-            
+          if(this.pathDes ===enemyPath.length-1){
+             this.hp=0;
+             treehp -=10
+          }
+            else{
             this.x = enemyPath[this.pathDes].x;
             this.y = enemyPath[this.pathDes].y;
             
@@ -41,7 +49,7 @@ function Enemy(){
             this.y = this.y + this.speedY/FPS;
         }
     };
-}
+}}
 var enemy = new Enemy();
 
 //找圖片
@@ -59,6 +67,8 @@ var towerbuiltImg = document.createElement("img");
 towerbuiltImg.src = "images/tower.png";
 var slimeImg = document.createElement("img");
 slimeImg.src = "images/slime.gif";
+var crosshairImg = document.createElement("img");
+crosshairImg.src = "images/crosshair.png";
 
 //敵人路徑
 var enemyPath = [
@@ -74,6 +84,7 @@ var enemyPath = [
 //畫畫
 function draw1(){
 enemy.move();  
+ctx.fillText("Hello World",100,100);
 ctx.drawImage(bgImg,0,0);
 ctx.drawImage(enemyImg,enemy.x,enemy.y);
 ctx.drawImage(enemy2Img,95,100);
@@ -88,10 +99,18 @@ ctx.drawImage(towerImg,580,420,60,60);
   } 
 ctx.drawImage(towerbuiltImg,tower.x,tower.y);  
   for(var i=0 ; i < enemies.length ; i++){
+    if (enemies[i].hp<=0) {
+           enemies.splice(i,1);
+      }      
     enemies[i].move();
     ctx.drawImage(slimeImg,enemies[i].x,enemies[i].y);
   }
   clock++;
+}
+tower.searchEnemy();
+if (tower.aimingEnemyId!=null){
+  var Id =  tower.aimingEnemyId;
+  ctx.drawImage(crosshairImg,enemies[id].x,enemies[id].y);
 }
 
 //找游標
@@ -104,7 +123,36 @@ y:event.offsetY
 
 //製造城堡
 var isBuilding = false;
-var tower = {};
+var tower = {
+  shoot:function(){},
+  fireRate:1,
+  readyToShootTime:1,
+  damage:5,
+  range:96,
+  aimingEnemyId:null,
+  searchEnemy:function(){
+    for (var i=0 ; i<enemies.length ; i++){
+        var distance = Math.sqrt(
+            Math.pow(this.x-enemies[i].x,2)+Math.pow(this.y-enemies[i].y,2)          
+        );
+      if (distance<=this.range){
+        this.aimingEnemyId=i;
+        return;
+      }
+    }
+    this.aimingEnemyId=null;
+    this.shoot=function(id){
+         ctx.beginPath(); 
+         ctx.moveTo(this.x, this.y); 
+         ctx.lineTo(enemies[id].x, enemies[id].y);
+         ctx.strokeStyle = 'red';
+         ctx.lineWidth = 3;
+         ctx.stroke();
+         enemies[id].hp = enemies[id].hp - this.damage;
+           };
+  
+
+};
 var cursor = {};
 $( "#game-canvas" ).on( "click", function(){
   if(isCollided(cursor.x, cursor.y, 580, 420, 60, 60)){
